@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <!-- Definitions for gradients, filters, and animations -->
+  <defs>
+    <!-- Glowing filters -->
+    <filter id="glow-shield" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-text" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="grid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- CSS Keyframe Animations for Dynamic Aspect -->
+    <style>
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.03); opacity: 1; filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.6)); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes pulse-ring {
+        0% { r: 80px; opacity: 0.8; stroke-width: 2px; }
+        100% { r: 160px; opacity: 0; stroke-width: 0.5px; }
+      }
+      @keyframes grid-move {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -40; }
+      }
+      @keyframes scanline {
+        0% { transform: translateY(-400px); }
+        100% { transform: translateY(400px); }
+      }
+      .animated-shield {
+        transform-origin: 220px 200px;
+        animation: pulse 4s ease-in-out infinite, float 6s ease-in-out infinite;
+      }
+      .pulse-circle {
+        transform-origin: 220px 200px;
+        animation: pulse-ring 3s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+      }
+      .grid-lines {
+        stroke-dasharray: 40, 40;
+        animation: grid-move 8s linear infinite;
+      }
+      .scanline-bar {
+        animation: scanline 8s linear infinite;
+        opacity: 0.1;
+      }
+      .node-glow {
+        animation: pulse 2s ease-in-out infinite alternate;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Grid -->
+  <g stroke="url(#grid-grad)" stroke-width="1">
+    <path class="grid-lines" d="M 0,50 L 1200,50 M 0,100 L 1200,100 M 0,150 L 1200,150 M 0,200 L 1200,200 M 0,250 L 1200,250 M 0,300 L 1200,300 M 0,350 L 1200,350" />
+    <path class="grid-lines" d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400 M 600,0 L 600,400 M 700,0 L 700,400 M 800,0 L 800,400 M 900,0 L 900,400 M 1000,0 L 1000,400 M 1100,0 L 1100,400" />
+  </g>
+
+  <!-- Horizontal Tech Scanline -->
+  <rect class="scanline-bar" x="0" y="0" width="1200" height="4" fill="#38bdf8" />
+
+  <!-- Background Decorative Light Orbs -->
+  <circle cx="220" cy="200" r="140" fill="#38bdf8" opacity="0.08" filter="url(#glow-shield)" />
+  <circle cx="950" cy="100" r="180" fill="#c084fc" opacity="0.05" filter="url(#glow-shield)" />
+
+  <!-- Animated Ring Emitting from Shield -->
+  <circle class="pulse-circle" cx="220" cy="200" r="80" fill="none" stroke="#38bdf8" />
+  <circle class="pulse-circle" cx="220" cy="200" r="80" fill="none" stroke="#a78bfa" style="animation-delay: 1.5s;" />
+
+  <!-- Left Side: Shield/Safety/Alignment Graphic -->
+  <g class="animated-shield">
+    <!-- Outer Hexagon Portal -->
+    <polygon points="220,90 315,145 315,255 220,310 125,255 125,145" fill="none" stroke="#1e293b" stroke-width="6" />
+    <polygon points="220,100 305,150 305,250 220,300 135,250 135,150" fill="none" stroke="url(#shield-grad)" stroke-width="2" stroke-opacity="0.5" />
+    
+    <!-- Central Shield -->
+    <path d="M 220,120 
+             C 270,120 300,130 300,160 
+             C 300,225 250,265 220,285 
+             C 190,265 140,225 140,160 
+             C 140,130 170,120 220,120 Z" 
+          fill="#1e1b4b" fill-opacity="0.8" stroke="url(#shield-grad)" stroke-width="4" filter="url(#glow-shield)" />
+          
+    <!-- Shield Tech Core -->
+    <path d="M 220,140 
+             C 250,140 275,148 275,170 
+             C 275,215 240,245 220,260 
+             C 200,245 165,215 165,170 
+             C 165,148 190,140 220,140 Z" 
+          fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,4" />
+
+    <!-- Constellation / Alignment Lines inside shield -->
+    <line x1="220" y1="170" x2="220" y2="230" stroke="#38bdf8" stroke-width="3" />
+    <line x1="220" y1="200" x2="190" y2="185" stroke="#38bdf8" stroke-width="2" />
+    <line x1="220" y1="200" x2="250" y2="185" stroke="#38bdf8" stroke-width="2" />
+    
+    <!-- Constellation Nodes -->
+    <circle class="node-glow" cx="220" cy="170" r="5" fill="#38bdf8" />
+    <circle class="node-glow" cx="220" cy="230" r="5" fill="#38bdf8" />
+    <circle class="node-glow" cx="190" cy="185" r="4" fill="#a78bfa" />
+    <circle class="node-glow" cx="250" cy="185" r="4" fill="#a78bfa" />
+    <circle class="node-glow" cx="220" cy="200" r="6" fill="#ffffff" />
+  </g>
+
+  <!-- Right Side: Text & Brand -->
+  <!-- Main Title -->
+  <text x="400" y="190" fill="url(#text-grad)" font-size="54" font-weight="800" letter-spacing="1.5" filter="url(#glow-text)">Awesome Safety Alignment</text>
+  
+  <!-- Subtitle / Description -->
+  <text x="400" y="240" fill="#94a3b8" font-size="20" font-weight="500" letter-spacing="0.5">A Curated Map of AI Safety, Alignment Guardrails &amp; Vulnerabilities</text>
+
+  <!-- Tech Badges / Tags -->
+  <g transform="translate(400, 275)">
+    <!-- Badge 1: Paradigms -->
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+    <text x="65" y="20" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">🛡️ PARADIGMS</text>
+
+    <!-- Badge 2: Jailbreaks -->
+    <rect x="145" y="0" width="130" height="32" rx="16" fill="#1e293b" stroke="#f472b6" stroke-width="1" />
+    <text x="210" y="20" fill="#f472b6" font-size="12" font-weight="700" text-anchor="middle">⚡ JAILBREAKS</text>
+
+    <!-- Badge 3: Countermeasures -->
+    <rect x="290" y="0" width="165" height="32" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="1" />
+    <text x="372" y="20" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">🧠 COUNTERMEASURES</text>
+  </g>
+</svg>
