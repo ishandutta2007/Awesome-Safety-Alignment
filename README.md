@@ -12,7 +12,11 @@ Safety Alignment is the engineering practice of ensuring that AI systems act in 
 The paradigm shifts in how engineers force models to remain safe, turning away from rigid heuristic rules toward scalable, feedback-driven behavioral boundaries.
 
 ```mermaid
-[2020: Heuristic Token Filtering] ──► Hardcoded regex and word-blacklists (Brittle)│▼[2022: Reward-Driven Optimization] ──► RLHF / DPO (Introduction of Chat-tuned guardrails)│▼[2024: Rule-Governed Training]     ──► Constitutional AI / RLAIF (LLMs align other LLMs)│▼[2026: Mechanistic & Interpret]    ──► Internal Steering / Circuit Breakers (Removing latent risks)
+flowchart TD
+    A["2020: Heuristic Token Filtering<br/>Hardcoded Regex & Word Blacklists (Brittle)"]
+    --> B["2022: Reward-Driven Optimization<br/>RLHF / DPO (Introduction of Chat-Tuned Guardrails)"]
+    --> C["2024: Rule-Governed Training<br/>Constitutional AI / RLAIF (LLMs Align Other LLMs)"]
+    --> D["2026: Mechanistic & Interpretability<br/>Internal Steering / Circuit Breakers (Removing Latent Risks)"]
 ```
 ---
 
