@@ -86,4 +86,13 @@ To guarantee safe deployment, models are continually benchmarked against adversa
 *   **💬 WildChat:** Real-world tracking of user-prompt behaviors used to catch emerging, out-of-distribution jailbreaking vectors.
 *   **☣️ WMDP (Weaponized Machinery & Cyber Defense Benchmarks):** Evaluates a model's latent capacity for facilitating dangerous biology, chemistry, and offensive cyberoperations, providing a baseline metric for safety scrubbing success.
 
-
+##  Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-Safety-Alignment&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Safety-Alignment&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Safety-Alignment&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Safety-Alignment&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
